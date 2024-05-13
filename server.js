@@ -16,6 +16,10 @@ mongoose.connect('mongodb://localhost/27017/signup', {
 
 const Item = require('./models/Item'); // Create the Item model
 
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
 app.get('/api/items', async (req, res) => {
 	try {
 		const items = await Item.find();
